@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Simulador5</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <style>
+
+       body {
+			widht: 100%;
+			height: 100%;
+		}
+		
+		
+        .main-wrapper {
+          position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+          width: 600px;
+          height: 600px;
+          border: 1px solid black;
+		  
+		  
+		}
+		
+		.main-wrapper h1 {
+			position: absolute;
+			bottom: 200px;
+			left: 630px;
+			width: 400px;
+			font-family: 'Lato', sans-serif;
+			color:red; 
+			font-size:20px;
+		}
+		
+		.main-wrapper p {
+			position: absolute;
+			left: 630px;
+			top: 370px;
+			width: 300px;
+			font-family: 'Lato', sans-serif;
+			font-size:15px
+		}
+
+      .dot {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        background-color: black;
+        border-radius: 40px;
+        border: 4px solid green;
+        transition: 1s all ease-out;
+        z-index: 3;
+      }
+		
+      .rectangulo {
+        position:absolute;
+        width: 550px; 
+        height: 150px; 
+        border: 2px solid black;
+        z-index: 1;
+      }
+
+      .rectangulowhite {
+        position:absolute;
+        width: 100px; 
+        height: 20px; 
+        background: white;
+        z-index: 2;
+      }
+
+
+      #dot1 { 
+        top: 330px;
+        left: 50px;
+      }
+	  
+	  #dot2 { 
+        top: 460px;
+        right: 460px;
+      }
+	  
+      #dot3 { 
+        top: 330px;
+        left: 460px;
+      }
+
+
+      #dot4 { 
+        top: 190px;
+        left: 50px;
+      }
+	  
+	  #dot5 { 
+        top: 190px;
+        right: 270px;
+      }
+	  
+      #dot6 { 
+        top: 190px;
+        left: 460px;
+      }
+
+
+
+      #dot7 { 
+          top: 40px;
+          left: 250px;
+        }
+		
+      #dot8 {
+          top: 90px;
+          right: 180px;
+        }
+
+      #dot9 {
+          top: 100px;
+          left: 170px;
+		  }
+
+
+
+      #dot1.centered {
+        transform: translate(208px, 0px);
+      }
+
+      #dot1.centered2 {
+        transform: translate(208px, 125px);
+      }
+	  
+      #dot1.centered3 {
+        transform: translate(438px, 125px);
+      }
+
+
+      #dot3.centered4 {
+        transform: translate(-188px, 0px);
+      }
+
+      #dot3.centered5 {
+        transform: translate(-188px, 125px);
+      }
+	  
+	  
+      #dot5.centered6 {
+        transform: translate(0px, -128px);
+      }
+	  
+	  #dot5.centered7 {
+        transform: translate(200px, -128px);
+      }
+
+
+      #dot4.centered8 {
+        transform: translate(218px, 0px);
+      }
+	  
+	  #dot4.centered9 {
+        transform: translate(218px, -100px);
+      }
+	  
+	  
+	  #dot6.centered10 {
+        transform: translate(-208px, 0px);
+      }
+	  
+	  #dot6.centered11 {
+        transform: translate(-208px, -100px);
+      }
+
+
+
+
+
+      .dot.red-border {
+        border: 4px solid red;
+      }
+		
+		
+		
+		 #rectangulo1 {
+          top: 25px;
+          right: 25px;
+        }
+	
+		 #rectangulo2 {
+          bottom: 25px;
+          right: 25px;
+        }
+		
+		 #rectangulowhite1 {
+          top: 170px;
+          right: 250px;
+        }
+	
+		 #rectangulowhite2 {
+          bottom: 170px;
+          right: 250px;
+        }
+	
+
+    </style>
+  </head>
+  <body>
+    <div class="main-wrapper">
+        <div id="dot1" class="dot"></div>
+        <div id="dot2" class="dot"></div>
+        <div id="dot3" class="dot"></div>
+        
+        <div id="dot4" class="dot"></div>
+        <div id="dot5" class="dot"></div>
+        <div id="dot6" class="dot"></div>     
+        
+        <div id="dot7" class="dot"></div>
+        <div id="dot8" class="dot"></div>
+        <div id="dot9" class="dot"></div> 
+        
+        <h1>TÚ DECIDES</h1>
+    	<p>#Quédate en casa</p>          
+           
+       
+        <div id="rectangulo1" class="rectangulo"></div>
+        <div id="rectangulo2" class="rectangulo"></div>
+        
+        
+        <div id="rectangulowhite1" class="rectangulowhite"></div>
+        <div id="rectangulowhite2" class="rectangulowhite"></div>
+
+    </div>
+
+    <script>
+	
+      var dot1 = document.getElementById('dot1');
+	  var dot2 = document.getElementById('dot2');
+	  var dot3 = document.getElementById('dot3');
+	  
+      var dot4 = document.getElementById('dot4');
+	  var dot5 = document.getElementById('dot5');
+	  var dot6 = document.getElementById('dot6');	  
+	  
+      makeAnimation();
+
+      function makeAnimation() {
+        setTimeout(addCenteredClass, 500);
+		setTimeout(addCentered2Class, 1500);
+	    setTimeout(addCentered3Class, 2500);
+        
+		setTimeout(addCentered4Class, 3500);
+		setTimeout(addCentered5Class, 4500);
+		
+		setTimeout(addCentered6Class, 500);
+		setTimeout(addCentered7Class, 1500);	
+		
+		setTimeout(addCentered8Class, 2500);
+		setTimeout(addCentered9Class, 3500);
+		
+		setTimeout(addCentered10Class, 4500);
+		setTimeout(addCentered11Class, 5500);			
+	
+        setTimeout(changeBorderColor, 4300);
+		setTimeout(changeBorder1Color, 6000);
+      }
+
+      function addCenteredClass() {
+        dot1.classList.add("centered");
+      }
+	  
+
+      function addCentered2Class() {
+        dot1.classList.add("centered2");
+      }
+	  
+      function addCentered3Class() {
+        dot1.classList.add("centered3");
+      }      
+	  
+	  
+	  
+	  
+	  function addCentered4Class() {
+        dot3.classList.add("centered4");
+      }
+	  
+
+      function addCentered5Class() {
+        dot3.classList.add("centered5");
+      }
+	  
+      function addCentered6Class() {
+        dot5.classList.add("centered6");
+      }	  
+	  
+	  function addCentered7Class() {
+        dot5.classList.add("centered7");
+      }	  
+    
+	
+      function addCentered8Class() {
+        dot4.classList.add("centered8");
+      }	  
+	  
+	  function addCentered9Class() {
+        dot4.classList.add("centered9");
+      }	  	
+	  
+      function addCentered10Class() {
+        dot6.classList.add("centered10");
+      }	  
+	  
+	  function addCentered11Class() {
+        dot6.classList.add("centered11");
+      }		  
+	  
+	
+
+      function changeBorderColor() {
+        dot6.classList.add("red-border");
+      }
+	  
+      function changeBorder1Color() {
+        dot4.classList.add("red-border");
+		dot5.classList.add("red-border");
+		dot7.classList.add("red-border");
+		dot8.classList.add("red-border");
+		dot9.classList.add("red-border");  
+      }	  
+	  
+	  
+    </script>
+  </body>
+</html>
